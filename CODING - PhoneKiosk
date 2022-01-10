@@ -1,0 +1,49 @@
+package labtest;
+
+import java.util.Scanner;
+
+public class PhoneKiosk {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		int sales;
+		int hour;
+		double comm, dailyWages;
+		int hourlyWages = 5;
+		
+		//hourly wages RM5
+		//5% of total sales volume    150 - 300
+		//10% of total sales volume   301 - 500
+		//15% of total sales volume   above 500
+		
+		System.out.print("Enter sales        : RM");
+		sales = sc.nextInt();
+		System.out.print("Enter hours worked : ");
+		hour = sc.nextInt();
+		
+		if ((sales >= 150) && (sales <= 300)) {
+			comm = sales * 5/100;
+			dailyWages = (hourlyWages * hour) + comm;
+			System.out.printf("\nCommission         : RM%.2f", comm);
+			System.out.printf("\nDaily wages        : RM%.2f", dailyWages);
+		}
+		else if ((sales >= 301) && (sales <= 500)) {
+			comm = sales * 10/100;
+			dailyWages = (hourlyWages * hour) + comm;
+			System.out.printf("\nCommission         : RM%.2f", comm);
+			System.out.printf("\nDaily wages        : RM%.2f", dailyWages);
+		}
+		else if (sales > 500) {
+			comm = sales * 15/100;
+			dailyWages = (hourlyWages * hour) + comm;
+			System.out.printf("\nCommission         : RM%.2f", comm);
+			System.out.printf("\nDaily wages        : RM%.2f", dailyWages);
+		}
+		
+		
+		
+	}
+
+}
