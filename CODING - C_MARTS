@@ -1,0 +1,65 @@
+package labtest;
+
+import java.util.Scanner;
+
+public class C_MARTS {
+
+	public static void main(String[] args) {
+		
+		Scanner sc= new Scanner(System.in);
+		
+		int item;
+		int quan1, quan2, quan3;
+		double price1, price2, price3;
+		double sum1, sum2, sum3;
+		double total;
+		double dis, pay;
+		
+		System.out.print("Enter the number of items : ");
+		item=sc.nextInt();
+		System.out.print("Enter price of first item : RM");
+		price1=sc.nextDouble();
+		System.out.print("Enter quantity of first item : ");
+		quan1=sc.nextInt();
+		
+		sum1 = price1 * quan1;
+		
+		System.out.print("\nEnter price of second item : RM");
+		price2=sc.nextDouble();
+		System.out.print("Enter quantity of second item : ");
+		quan2=sc.nextInt();
+		
+		sum2 = price2 * quan2;
+		
+		System.out.print("\nEnter price of third item : RM");
+		price3=sc.nextDouble();
+		System.out.print("Enter quantity of third item : ");
+		quan3=sc.nextInt();
+		
+		sum3 = price3 * quan3;
+		
+		total = sum1 + sum2 + sum3;
+		
+		System.out.printf("\nTotal price       : RM%.2f", total);
+		
+		//discount 20%
+		if (total > 100) {
+			dis = total * 20/100 ;
+			pay = total - dis;		
+			System.out.printf("\nDiscount received : RM%.2f" , dis);
+			System.out.printf("\nPrice to be paid  : RM%.2f" , pay);
+		}
+		//discount 10%
+		else {
+			dis = total * (10/100);
+			pay = total - dis;
+			System.out.printf("\nDiscount received : RM%.2f" , dis);
+			System.out.printf("\nPrice to be paid  : RM%.2f" , pay);
+		}
+		
+		
+		
+		
+	}
+
+}
